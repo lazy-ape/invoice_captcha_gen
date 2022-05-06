@@ -79,7 +79,7 @@ def generate_captcha_image(path="fake_pic"):
 
 def gen_single_process():
     # 每个进程生产 1 万个
-    for i in range(10000):
+    for i in range(1):
         generate_captcha_image()
 
 
@@ -89,7 +89,7 @@ if __name__ == '__main__':
     process = []
     for i in range(10):
         process.append(
-            multiprocessing.Process(target=gen_single_process, args=(3,))
+            multiprocessing.Process(target=gen_single_process, args=())
         )
     for p in process:
         p.start()
