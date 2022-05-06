@@ -130,9 +130,8 @@ class ImageCaptcha:
         # 字符图片拼接到大图上
         for index, im in enumerate(images):
             w, h = im.size
-            offset = self._width - last_w - 1 if offset >= self._width - last_w else offset
             self.combine(image, im, (offset,  (self._height - h)//2 + random.randint(-2, 2)), background)
-            offset = offset + min(max_interval, max(int(0.7*w), 11)) + random.randint(-2, 2)
+            offset = offset + min(max_interval, max(int(0.7*w), 11)) + random.randint(-2, 0)
 
         return image, colors
 

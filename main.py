@@ -79,7 +79,7 @@ def generate_captcha_image(path="fake_pic"):
 
 def gen_single_process():
     # 每个进程生产 1 万个
-    for i in range(1):
+    for i in range(10000):
         generate_captcha_image()
 
 
