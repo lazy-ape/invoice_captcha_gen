@@ -105,7 +105,7 @@ class ImageCaptcha:
             Draw(im).text((0, 0), c, font=font, fill=color)
 
             # rotate
-            im: Image = im.crop(im.getbbox())
+            im = im.crop(im.getbbox())
             im = im.rotate(random.uniform(-30, 30), expand=1)
 
             fff = Image.new("RGBA", size=im.size, color=background)
@@ -121,14 +121,14 @@ class ImageCaptcha:
             color = self._text_colors[index]
             images.append(_draw_character(c, color))
 
-        start = random.randint(0, 3)
+        start = random.randint(0, 4)
         last_w, _ = images[-1].size # 最后一个字符的宽度
         max_interval = (self._width - last_w - start)//(len(images)-1)  # 字符最大间距，保证不会超出
         # print(max_interval)
         offset = start
 
         # 字符图片拼接到大图上
-        for index, im in enumerate(images):
+        for im in images:
             w, h = im.size
             self.combine(image, im, (offset,  (self._height - h)//2 + random.randint(-2, 2)), background)
             offset = offset + min(max_interval, max(int(0.7*w), 11)) + random.randint(-2, 0)

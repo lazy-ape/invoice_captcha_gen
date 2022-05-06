@@ -43,7 +43,7 @@ def random_captcha_text(num):
 # 生成字符对应的验证码
 def generate_captcha_image(path="fake_pic"):
 
-    imc = ImageCaptcha(width=90, height=35, fonts=[r"data/actionj.ttf", r"data/simsun.ttc"], font_sizes=(24, 25, 26, 27),
+    imc = ImageCaptcha(width=90, height=35, fonts=[r"data/actionj.ttf", r"data/simsun.ttc"], font_sizes=(21, 22, 23, 24),
                        text_colors=color_dict)
 
     # 获得随机生成的6个验证码字符
