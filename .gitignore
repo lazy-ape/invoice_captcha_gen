@@ -237,7 +237,6 @@ dmypy.json
 
 config_*.json
 config.yaml
-data/*.txt
 .qiniu_pythonsdk_hostscache.json
 202*_*_*_*_*_*.png
 latest.json
